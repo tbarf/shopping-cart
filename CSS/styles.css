@@ -1,0 +1,130 @@
+            html, body {
+                box-sizing: border-box;
+            }
+
+            *, *:before, *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                font-family: 'Open Sans', 'sans-serif';
+                background-color: #fff;
+                color: #444;
+            }
+
+            img {
+                /*max-width: 100%;*/
+                max-width: 150px;
+                max-height: 150px
+            }
+
+            h1, p {
+                margin: 0 0 1em 0;
+            }
+
+            .media {
+                display: grid;
+                grid-column-gap: 20px;
+                grid-template-columns: 150px 3fr;
+                grid-template-rows: auto 1fr auto;
+                grid-template-areas: "img title" "img bd"
+            }
+
+            .media {
+                margin-bottom: 2em;
+                padding: 10px;
+                border-top: 1px solid gray;
+                border-bottom: 1px solid gray;
+            }
+
+            .media>.title {
+                grid-area: title;
+            }
+
+            .media>.img {
+                grid-area: img;
+            }
+
+            .media>.content {
+                grid-area: bd;
+            }
+
+            @media (min-width: 600px) {
+                /* clearfix*/
+                .media:after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                .media>.media {
+                    margin-left: 160px;
+                    clear: both;
+                }
+                .media .img {
+                    float: left;
+                    margin: 0 10px 0 0;
+                    width: 150px;
+                }
+                .media>* {
+                    margin: 0 0 0 160px;
+                }
+                /*    @supports(display: grid) {
+        /* override */
+                .media>*, .media>* {
+                    margin: 0;
+                }
+                .media .img {
+                    width: auto;
+                    margin: 0;
+                    */
+                }
+                .media:after {
+                    content: none;
+                }
+            }
+
+            .cartItem {}
+
+            .product {
+                margin: 0 0 1em 0;
+                font-size: 150%;
+                font-weight: bold;
+            }
+
+            .description {
+                margin-top: 10px;
+                font-weight: initial;
+                font-size: 80%;
+                color: #8b93a0;
+            }
+
+            .price {
+                float: right;
+                font-size: 150%;
+                margin: 0 10px 20px 10px;
+            }
+
+            #headerText {
+                color: #b7680e
+            }
+
+            #header {
+                background-color: #f4a742;
+                padding: 20px 20px 20px 20px;
+                margin-bottom: 100px;
+                border-bottom: 1px solid gray;
+            }
+
+            #cartImg {
+                margin-right: 10px;
+            }
+
+            #subtotal {
+                font-size: 150%;
+                font-weight: bold;
+                margin-top: 60px;
+            }
+
+            #priceAdded {
+                float: right;
+            }
